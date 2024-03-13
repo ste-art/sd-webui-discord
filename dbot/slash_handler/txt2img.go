@@ -3,7 +3,7 @@
  * @Date: 2023-08-22 17:13:19
  * @version:
  * @LastEditors: SpenserCai
- * @LastEditTime: 2023-10-15 11:33:25
+ * @LastEditTime: 2024-03-13 15:59:37
  * @Description: file content
  */
 package slash_handler
@@ -310,7 +310,7 @@ func (shdl SlashHandler) BuildTxt2imgComponent(i *discordgo.InteractionCreate, i
 					CustomID: "txt2img|retry",
 					Label:    "Retry",
 					Style:    discordgo.SecondaryButton,
-					Emoji:    discordgo.ComponentEmoji{Name: "🔄"},
+					Emoji:    &discordgo.ComponentEmoji{Name: "🔄"},
 					Disabled: func() bool {
 						return !global.Config.UserCenter.Enable
 					}(),
@@ -319,7 +319,7 @@ func (shdl SlashHandler) BuildTxt2imgComponent(i *discordgo.InteractionCreate, i
 					CustomID: "txt2img|delete|" + shdl.GetDiscordUserId(i),
 					Label:    "Delete",
 					Style:    discordgo.SecondaryButton,
-					Emoji:    discordgo.ComponentEmoji{Name: "🗑️"},
+					Emoji:    &discordgo.ComponentEmoji{Name: "🗑️"},
 				},
 			},
 		},
@@ -333,7 +333,7 @@ func (shdl SlashHandler) BuildTxt2imgComponent(i *discordgo.InteractionCreate, i
 				CustomID: fmt.Sprintf("txt2img|multi_image|%d", j),
 				Label:    fmt.Sprintf("%d", j+1),
 				Style:    discordgo.SecondaryButton,
-				Emoji:    discordgo.ComponentEmoji{Name: "🖼️"},
+				Emoji:    &discordgo.ComponentEmoji{Name: "🖼️"},
 				Disabled: func() bool {
 					return !global.Config.UserCenter.Enable
 				}(),

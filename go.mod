@@ -5,7 +5,7 @@ go 1.19
 require (
 	github.com/SpenserCai/sd-webui-go v0.4.3
 	github.com/buckket/go-blurhash v1.1.0
-	github.com/bwmarrin/discordgo v0.27.1
+	github.com/bwmarrin/discordgo v0.27.2-0.20240307155122-202785c50b9e
 	github.com/go-openapi/errors v0.20.4
 	github.com/go-openapi/loads v0.21.2
 	github.com/go-openapi/runtime v0.26.0
@@ -16,9 +16,9 @@ require (
 	github.com/golang-jwt/jwt/v5 v5.0.0
 	github.com/jessevdk/go-flags v1.5.0
 	golang.org/x/image v0.12.0
-	golang.org/x/net v0.15.0
+	golang.org/x/net v0.22.0
 	golang.org/x/oauth2 v0.12.0
-	golang.org/x/text v0.13.0
+	golang.org/x/text v0.14.0
 	gorm.io/driver/mysql v1.5.1
 	gorm.io/driver/sqlite v1.5.3
 	gorm.io/gorm v1.25.4
@@ -34,7 +34,7 @@ require (
 	github.com/go-openapi/jsonreference v0.20.2 // indirect
 	github.com/go-sql-driver/mysql v1.7.0 // indirect
 	github.com/golang/protobuf v1.5.3 // indirect
-	github.com/gorilla/websocket v1.4.2 // indirect
+	github.com/gorilla/websocket v1.5.1 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.5 // indirect
 	github.com/josharian/intern v1.0.0 // indirect
@@ -48,8 +48,8 @@ require (
 	go.opentelemetry.io/otel v1.17.0 // indirect
 	go.opentelemetry.io/otel/metric v1.17.0 // indirect
 	go.opentelemetry.io/otel/trace v1.17.0 // indirect
-	golang.org/x/crypto v0.13.0 // indirect
-	golang.org/x/sys v0.12.0 // indirect
+	golang.org/x/crypto v0.21.0 // indirect
+	golang.org/x/sys v0.18.0 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
 	google.golang.org/protobuf v1.31.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
