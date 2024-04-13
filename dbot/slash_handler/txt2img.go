@@ -254,10 +254,11 @@ func (shdl SlashHandler) Txt2imgSetOptions(dsOpt []*discordgo.ApplicationCommand
 		tmpAScript["selfattentionguidance integrated"] = sagScript
 		opt.AlwaysonScripts = tmpAScript
 	}
-
-	tmpOverrideSettings := opt.OverrideSettings.(map[string]interface{})
-	tmpOverrideSettings["CLIP_stop_at_last_layers"] = clipSkip
-	opt.OverrideSettings = tmpOverrideSettings
+	if clipSkip != 1 {
+		tmpOverrideSettings := opt.OverrideSettings.(map[string]interface{})
+		tmpOverrideSettings["CLIP_stop_at_last_layers"] = clipSkip
+		opt.OverrideSettings = tmpOverrideSettings
+	}
 
 }
 
