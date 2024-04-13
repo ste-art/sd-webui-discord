@@ -25,9 +25,10 @@ type StableConfig struct {
 	CfgScale       float64 `json:"cfg_scale"`
 	NegativePrompt string  `json:"negative_prompt"`
 	Sampler        string  `json:"sampler"`
-	ClipSkip       int64   `json:"CLIP_stop_at_last_layers"`
+	ClipSkip       int64   `json:"clip_skip"`
 	NIter          int64   `json:"n_iter"`
 	Seed           int64   `json:"seed"`
+	MaxLoad        int64   `json:"max_load"`
 
 	Sag          string  `json:"sag"`
 	SagScale     float64 `json:"sag_scale"`

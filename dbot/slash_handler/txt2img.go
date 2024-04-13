@@ -470,7 +470,12 @@ func (shdl SlashHandler) Txt2imgAction(s *discordgo.Session, i *discordgo.Intera
 
 }
 
-func (shdl SlashHandler) LoadGuardian(s *discordgo.Session, i *discordgo.InteractionCreate, option *intersvc.SdapiV1Txt2imgRequest) error {
+func (shdl SlashHandler) MaxLoadGuard(s *discordgo.Session, i *discordgo.InteractionCreate, option *intersvc.SdapiV1Txt2imgRequest) error {
+
+	maxLoad := shdl.GetDefaultSettingFromUser("max_load", int64(1<<16), i).(int64)
+	if maxLoad == 0 {
+		maxLoad = 1 << 16
+	}
 	niter := int64(1)
 	if option.NIter != nil {
 		niter = *option.NIter
@@ -481,7 +486,7 @@ func (shdl SlashHandler) LoadGuardian(s *discordgo.Session, i *discordgo.Interac
 	}
 	widthScore := 1 + ((*option.Width - 1) / 64)
 	heightScore := 1 + ((*option.Height - 1) / 64)
-	if widthScore*heightScore*steps*niter > 1<<16 {
+	if widthScore*heightScore*steps*niter > maxLoad {
 		var content string
 		if niter > 1 {
 			content = "Request is too heavy. Consider decresing widht, height, steps or n_iter."
@@ -506,7 +511,7 @@ func (shdl SlashHandler) Txt2imgAppHandler(s *discordgo.Session, i *discordgo.In
 		} else {
 			option = otherOption
 		}
-		err := shdl.LoadGuardian(s, i, option)
+		err := shdl.MaxLoadGuard(s, i, option)
 		if err != nil {
 			return nil, err
 		}

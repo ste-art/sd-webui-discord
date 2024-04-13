@@ -121,7 +121,7 @@ func (shdl SlashHandler) PresetSetOptions(i *discordgo.InteractionCreate, opt *c
 	}
 
 	optVal := reflect.ValueOf(opt).Elem()
-	presetConfig := reflect.ValueOf(selectedPreset).Elem()
+	presetConfig := reflect.ValueOf(&selectedPreset).Elem()
 	for i := 0; i < optVal.NumField(); i++ {
 		if presetConfig.Field(i).Interface() != reflect.Zero(presetConfig.Field(i).Type()).Interface() {
 			optVal.FieldByName(optVal.Type().Field(i).Name).Set(presetConfig.Field(i))
