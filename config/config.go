@@ -37,8 +37,8 @@ type StableConfig struct {
 	FreeU   string  `json:"freeu"`
 	FreeUB1 float64 `json:"freeu_b1"`
 	FreeUB2 float64 `json:"freeu_b2"`
-	FreeUS1 float64 `json:"freeu_S1"`
-	FreeUS2 float64 `json:"freeu_S2"`
+	FreeUS1 float64 `json:"freeu_s1"`
+	FreeUS2 float64 `json:"freeu_s2"`
 }
 
 type DbConfig struct {
